@@ -9,8 +9,50 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SchoolTransportRouteImport } from './routes/school-transport'
+import { Route as PilgrimageRouteImport } from './routes/pilgrimage'
+import { Route as PackagesRouteImport } from './routes/packages'
+import { Route as NatureTripsRouteImport } from './routes/nature-trips'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SchoolTransportRoute = SchoolTransportRouteImport.update({
+  id: '/school-transport',
+  path: '/school-transport',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PilgrimageRoute = PilgrimageRouteImport.update({
+  id: '/pilgrimage',
+  path: '/pilgrimage',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PackagesRoute = PackagesRouteImport.update({
+  id: '/packages',
+  path: '/packages',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NatureTripsRoute = NatureTripsRouteImport.update({
+  id: '/nature-trips',
+  path: '/nature-trips',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +61,130 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
+  '/nature-trips': typeof NatureTripsRoute
+  '/packages': typeof PackagesRoute
+  '/pilgrimage': typeof PilgrimageRoute
+  '/school-transport': typeof SchoolTransportRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
+  '/nature-trips': typeof NatureTripsRoute
+  '/packages': typeof PackagesRoute
+  '/pilgrimage': typeof PilgrimageRoute
+  '/school-transport': typeof SchoolTransportRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
+  '/nature-trips': typeof NatureTripsRoute
+  '/packages': typeof PackagesRoute
+  '/pilgrimage': typeof PilgrimageRoute
+  '/school-transport': typeof SchoolTransportRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/gallery'
+    | '/nature-trips'
+    | '/packages'
+    | '/pilgrimage'
+    | '/school-transport'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/gallery'
+    | '/nature-trips'
+    | '/packages'
+    | '/pilgrimage'
+    | '/school-transport'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/gallery'
+    | '/nature-trips'
+    | '/packages'
+    | '/pilgrimage'
+    | '/school-transport'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ContactRoute: typeof ContactRoute
+  GalleryRoute: typeof GalleryRoute
+  NatureTripsRoute: typeof NatureTripsRoute
+  PackagesRoute: typeof PackagesRoute
+  PilgrimageRoute: typeof PilgrimageRoute
+  SchoolTransportRoute: typeof SchoolTransportRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/school-transport': {
+      id: '/school-transport'
+      path: '/school-transport'
+      fullPath: '/school-transport'
+      preLoaderRoute: typeof SchoolTransportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pilgrimage': {
+      id: '/pilgrimage'
+      path: '/pilgrimage'
+      fullPath: '/pilgrimage'
+      preLoaderRoute: typeof PilgrimageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/packages': {
+      id: '/packages'
+      path: '/packages'
+      fullPath: '/packages'
+      preLoaderRoute: typeof PackagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nature-trips': {
+      id: '/nature-trips'
+      path: '/nature-trips'
+      fullPath: '/nature-trips'
+      preLoaderRoute: typeof NatureTripsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,17 +197,14 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ContactRoute: ContactRoute,
+  GalleryRoute: GalleryRoute,
+  NatureTripsRoute: NatureTripsRoute,
+  PackagesRoute: PackagesRoute,
+  PilgrimageRoute: PilgrimageRoute,
+  SchoolTransportRoute: SchoolTransportRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
