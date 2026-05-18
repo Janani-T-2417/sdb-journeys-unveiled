@@ -1,8 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Menu, X, MessageCircle, Compass } from "lucide-react";
+import { Menu, X, MessageCircle } from "lucide-react";
 import { waUrl } from "@/lib/wa";
 import { motion, AnimatePresence } from "motion/react";
+import logoIcon from "@/assets/logo-icon.png";
 
 const links = [
   { to: "/", label: "Home" },
@@ -38,15 +39,15 @@ export function Navbar() {
             scrolled ? "glass shadow-soft" : "bg-transparent"
           }`}
         >
-          <Link to="/" className="flex items-center gap-2 group">
-            <span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-primary text-primary-foreground shadow-soft">
-              <Compass className="h-5 w-5" strokeWidth={2.5} />
+          <Link to="/" className="flex items-center gap-2.5 group">
+            <span className={`grid h-11 w-11 place-items-center rounded-xl transition-colors ${scrolled ? "bg-secondary" : "bg-white/10 ring-1 ring-white/20"}`}>
+              <img src={logoIcon} alt="SDB Travels" width={44} height={44} className="h-8 w-8 object-contain" />
             </span>
             <span className="flex flex-col leading-none">
               <span className={`font-display text-xl font-bold tracking-tight ${scrolled ? "text-secondary" : "text-white"}`}>
                 SDB <span className="text-gradient-gold">Travels</span>
               </span>
-              <span className={`text-[10px] uppercase tracking-[0.25em] ${scrolled ? "text-muted-foreground" : "text-white/70"}`}>
+              <span className={`mt-1 text-[10px] uppercase tracking-[0.28em] ${scrolled ? "text-muted-foreground" : "text-white/70"}`}>
                 Tours & Travels
               </span>
             </span>
