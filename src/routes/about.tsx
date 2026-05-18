@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "./packages";
 import { motion } from "motion/react";
-import { Award, Users, Map, Heart, Car, Route as MapRoute, UsersRound, Hotel } from "lucide-react";
+import { Award, Users, Map, Heart, Car, Navigation, UsersRound, Hotel } from "lucide-react";
 
 export const Route = createFileRoute("/about")({
   component: Page,
@@ -36,7 +36,7 @@ function Page() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { Icon: Car, k: "Taxi Service", v: "Local & outstation cabs with professional drivers" },
-              { Icon: MapRoute, k: "Travel Planning", v: "Custom itineraries tailored to your needs" },
+              { Icon: Navigation, k: "Travel Planning", v: "Custom itineraries tailored to your needs" },
               { Icon: UsersRound, k: "Family & Group Tours", v: "Comfortable trips for families and large groups" },
               { Icon: Hotel, k: "Hotel Reservations", v: "Best stays at affordable prices" },
             ].map(({ Icon, k, v }, i) => (

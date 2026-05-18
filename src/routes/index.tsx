@@ -4,7 +4,7 @@ import { Hero } from "@/components/Hero";
 import { PackageCard } from "@/components/PackageCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { featured, packages } from "@/data/packages";
-import { Car, Route as MapRoute, UsersRound, Hotel, MessageCircle, Star } from "lucide-react";
+import { Car, Navigation, UsersRound, Hotel, MessageCircle, Star } from "lucide-react";
 import { waUrl } from "@/lib/wa";
 
 export const Route = createFileRoute("/")({
@@ -19,7 +19,7 @@ export const Route = createFileRoute("/")({
 
 const services = [
   { to: "/packages", title: "Taxi Service", desc: "Local & outstation cabs with experienced drivers", Icon: Car },
-  { to: "/packages", title: "Travel Planning", desc: "Custom itineraries for your perfect trip", Icon: MapRoute },
+  { to: "/packages", title: "Travel Planning", desc: "Custom itineraries for your perfect trip", Icon: Navigation },
   { to: "/packages", title: "Family & Group Tours", desc: "Comfortable trips for families and large groups", Icon: UsersRound },
   { to: "/packages", title: "Hotel Reservations", desc: "Best stays at affordable prices", Icon: Hotel },
 ];
