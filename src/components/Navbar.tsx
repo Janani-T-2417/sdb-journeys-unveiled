@@ -47,7 +47,7 @@ export function Navbar() {
                 SDB <span className="text-gradient-gold">Travels</span>
               </span>
               <span className={`text-[10px] uppercase tracking-[0.25em] ${scrolled ? "text-muted-foreground" : "text-white/70"}`}>
-                Discover India
+                Tours & Travels
               </span>
             </span>
           </Link>

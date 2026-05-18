@@ -49,7 +49,7 @@ function Page() {
               <a href={waUrl("Hi SDB Travels, I want to enquire about school transport services.")} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[var(--whatsapp)] px-6 py-3 text-sm font-semibold text-white shadow-soft hover:scale-105 transition-transform">
                 <MessageCircle className="h-4 w-4" /> Enquire on WhatsApp
               </a>
-              <a href="tel:+91" className="inline-flex items-center gap-2 rounded-full bg-secondary px-6 py-3 text-sm font-semibold text-white shadow-soft hover:scale-105 transition-transform">
+              <a href="tel:+919885745970" className="inline-flex items-center gap-2 rounded-full bg-secondary px-6 py-3 text-sm font-semibold text-white shadow-soft hover:scale-105 transition-transform">
                 <Bus className="h-4 w-4" /> Request a Demo Route
               </a>
             </div>
