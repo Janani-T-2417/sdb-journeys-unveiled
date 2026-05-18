@@ -4,30 +4,30 @@ import { Hero } from "@/components/Hero";
 import { PackageCard } from "@/components/PackageCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { featured, packages } from "@/data/packages";
-import { Bus, Compass, HeartHandshake, MapPinned, MessageCircle, ShieldCheck, Sparkles, Star } from "lucide-react";
+import { Car, Route as MapRoute, UsersRound, Hotel, MessageCircle, Star } from "lucide-react";
 import { waUrl } from "@/lib/wa";
 
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "SDB Travels — Premium Tour, Pilgrimage & Nature Trips Across India" },
-      { name: "description", content: "Discover India with SDB Travels. Premium tour packages, pilgrimage, nature escapes, waterfalls, beaches and trusted school transport." },
+      { title: "SDB Travels — Taxi, Tours & Travel Planning in Visakhapatnam" },
+      { name: "description", content: "SDB Travels offers taxi service, travel planning, family & group tours and hotel reservations in Visakhapatnam. Reliable, affordable and comfortable." },
     ],
   }),
 });
 
-const categories = [
-  { to: "/nature-trips", title: "Hill Stations", desc: "Misty escapes & cool retreats", Icon: MapPinned, count: "10+ destinations" },
-  { to: "/packages", title: "Waterfalls & Adventure", desc: "Roaring falls and bold trails", Icon: Sparkles, count: "5+ trips" },
-  { to: "/packages", title: "Beach Getaways", desc: "Sun, sand and serenity", Icon: Compass, count: "5+ coastlines" },
-  { to: "/pilgrimage", title: "Pilgrimage Tours", desc: "Sacred journeys, peaceful hearts", Icon: HeartHandshake, count: "10+ shrines" },
+const services = [
+  { to: "/packages", title: "Taxi Service", desc: "Local & outstation cabs with experienced drivers", Icon: Car },
+  { to: "/packages", title: "Travel Planning", desc: "Custom itineraries for your perfect trip", Icon: MapRoute },
+  { to: "/packages", title: "Family & Group Tours", desc: "Comfortable trips for families and large groups", Icon: UsersRound },
+  { to: "/packages", title: "Hotel Reservations", desc: "Best stays at affordable prices", Icon: Hotel },
 ];
 
 const testimonials = [
-  { name: "Ananya Reddy", role: "Hyderabad", text: "Our Araku trip was perfectly planned — clean stays, friendly guide and on-time pickups. Will book again!", rating: 5, img: "https://i.pravatar.cc/120?img=47" },
-  { name: "Rahul Sharma", role: "Bengaluru", text: "Did the Kashmir tour with family. SDB handled every detail — Shikara, Gulmarg, food. Truly premium service.", rating: 5, img: "https://i.pravatar.cc/120?img=12" },
-  { name: "Priya Venkatesh", role: "Chennai", text: "Tirupati darshan was so smooth thanks to their team. Highly recommend for pilgrimage trips.", rating: 5, img: "https://i.pravatar.cc/120?img=32" },
+  { name: "Ananya Reddy", role: "Hyderabad", text: "Booked a taxi for our Vizag trip — clean car, friendly driver and on-time pickup. Highly recommended!", rating: 5, img: "https://i.pravatar.cc/120?img=47" },
+  { name: "Rahul Sharma", role: "Bengaluru", text: "SDB Travels planned our entire Araku trip — from cab to hotel, everything was perfect.", rating: 5, img: "https://i.pravatar.cc/120?img=12" },
+  { name: "Priya Venkatesh", role: "Chennai", text: "Family tour to Tirupati was so well organized. The hotel booking was excellent value for money.", rating: 5, img: "https://i.pravatar.cc/120?img=32" },
   { name: "Mohan Rao", role: "Vizag", text: "Their school bus service has been a blessing — punctual, safe and the drivers are gentle with kids.", rating: 5, img: "https://i.pravatar.cc/120?img=68" },
   { name: "Lakshmi Iyer", role: "Coimbatore", text: "Kerala backwater houseboat was magical. Loved the small touches — fresh fruits, sunset cruise.", rating: 5, img: "https://i.pravatar.cc/120?img=45" },
   { name: "Vikram Singh", role: "Delhi", text: "Lambasingi at 4am with the frost… unforgettable! SDB's local knowledge is unmatched.", rating: 5, img: "https://i.pravatar.cc/120?img=15" },
@@ -41,25 +41,24 @@ function Index() {
     <>
       <Hero />
 
-      {/* Categories strip */}
+      {/* Services strip */}
       <section className="relative -mt-16 z-10">
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {categories.map((c, i) => (
+            {services.map((s, i) => (
               <motion.div
-                key={c.title}
+                key={s.title}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.07 }}
               >
-                <Link to={c.to} className="group block rounded-3xl bg-card p-6 shadow-soft hover:shadow-elegant transition-all hover:-translate-y-1">
+                <Link to={s.to} className="group block rounded-3xl bg-card p-6 shadow-soft hover:shadow-elegant transition-all hover:-translate-y-1">
                   <span className="grid h-12 w-12 place-items-center rounded-2xl bg-gradient-primary text-primary-foreground shadow-soft">
-                    <c.Icon className="h-5 w-5" />
+                    <s.Icon className="h-5 w-5" />
                   </span>
-                  <h3 className="mt-4 font-display text-xl font-bold text-secondary">{c.title}</h3>
-                  <p className="mt-1 text-sm text-muted-foreground">{c.desc}</p>
-                  <p className="mt-3 text-xs font-semibold uppercase tracking-widest text-primary">{c.count} →</p>
+                  <h3 className="mt-4 font-display text-xl font-bold text-secondary">{s.title}</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">{s.desc}</p>
                 </Link>
               </motion.div>
             ))}
@@ -99,8 +98,8 @@ function Index() {
                 Travel that feels <span className="text-gradient-gold">effortless</span>.
               </h2>
               <p className="mt-4 text-white/75 leading-relaxed">
-                From your first enquiry to the last sunset, we handle every detail — vetted hotels, comfortable transport,
-                experienced guides and 24×7 support. So all you need to do is enjoy the journey.
+                From taxi bookings to full trip planning, we handle every detail — reliable cabs, comfortable stays,
+                experienced drivers and 24×7 support. So all you need to do is enjoy the journey.
               </p>
               <a href={waUrl()} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex items-center gap-2 rounded-full bg-gradient-gold px-7 py-3.5 text-sm font-semibold text-secondary shadow-gold hover:scale-105 transition-transform">
                 <MessageCircle className="h-4 w-4" /> Plan my trip on WhatsApp
@@ -108,10 +107,10 @@ function Index() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { Icon: ShieldCheck, t: "100% Safe", d: "Verified partners & trained drivers" },
+                { Icon: Car, t: "Reliable Cabs", d: "Local & outstation taxi service" },
                 { Icon: Star, t: "4.9 Rated", d: "Loved by 12,000+ travelers" },
-                { Icon: HeartHandshake, t: "Personal Care", d: "Dedicated trip manager" },
-                { Icon: Bus, t: "Comfortable Fleet", d: "Premium, well-maintained vehicles" },
+                { Icon: UsersRound, t: "Group Tours", d: "Family & group packages" },
+                { Icon: Hotel, t: "Best Stays", d: "Affordable hotel bookings" },
               ].map(({ Icon, t, d }) => (
                 <div key={t} className="glass-dark rounded-2xl p-5">
                   <Icon className="h-6 w-6 text-gold" />

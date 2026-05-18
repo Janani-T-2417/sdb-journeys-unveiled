@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { Compass, Facebook, Instagram, Youtube, MessageCircle, Mail, Phone, MapPin } from "lucide-react";
-import { ADDRESS, EMAIL, PHONE_DISPLAY, waUrl } from "@/lib/wa";
+import { Compass, Facebook, Instagram, Linkedin, MessageCircle, Mail, Phone, MapPin } from "lucide-react";
+import { ADDRESS, EMAIL, PHONE_NUMBERS, waUrl } from "@/lib/wa";
 
 export function Footer() {
   return (
@@ -18,14 +18,13 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-4 text-sm text-white/70 leading-relaxed">
-              Premium travel experiences across India — tour packages, pilgrimage trips,
-              hill escapes, family vacations and trusted school transport services.
+              Trusted tours and travels service based in Visakhapatnam. Taxi service, travel planning, family & group tours, and hotel reservations.
             </p>
             <div className="mt-5 flex items-center gap-3">
               {[
                 { Icon: Facebook, href: "#" },
                 { Icon: Instagram, href: "#" },
-                { Icon: Youtube, href: "#" },
+                { Icon: Linkedin, href: "#" },
               ].map(({ Icon, href }, i) => (
                 <a key={i} href={href} className="grid h-9 w-9 place-items-center rounded-full bg-white/10 hover:bg-gold hover:text-secondary transition-colors">
                   <Icon className="h-4 w-4" />
@@ -68,7 +67,16 @@ export function Footer() {
             <h4 className="text-sm font-semibold uppercase tracking-widest text-gold">Get in Touch</h4>
             <ul className="mt-5 space-y-3 text-sm text-white/80">
               <li className="flex items-start gap-3"><MapPin className="mt-0.5 h-4 w-4 text-gold" />{ADDRESS}</li>
-              <li className="flex items-center gap-3"><Phone className="h-4 w-4 text-gold" />{PHONE_DISPLAY}</li>
+              <li className="flex items-center gap-3">
+                <Phone className="h-4 w-4 text-gold shrink-0" />
+                <div className="flex flex-col">
+                  {PHONE_NUMBERS.map((num) => (
+                    <a key={num} href={`tel:+91${num}`} className="hover:text-gold transition-colors">
+                      +91 {num.slice(0, 5)} {num.slice(5)}
+                    </a>
+                  ))}
+                </div>
+              </li>
               <li className="flex items-center gap-3"><Mail className="h-4 w-4 text-gold" />{EMAIL}</li>
             </ul>
             <a
@@ -83,8 +91,8 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-xs text-white/60 md:flex-row">
-          <p>© {new Date().getFullYear()} SDB Travels. All rights reserved.</p>
-          <p>Crafted with care for travelers across India.</p>
+          <p>&copy; {new Date().getFullYear()} SDB Travels. All rights reserved.</p>
+          <p>Pendurthi, Gopalapatnam, Visakhapatnam</p>
         </div>
       </div>
     </footer>

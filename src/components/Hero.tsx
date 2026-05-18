@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
-import { ArrowRight, MessageCircle, Star, Shield, Users } from "lucide-react";
+import { ArrowRight, MessageCircle, Star, Shield, Users, Car, Route, UsersRound, Hotel } from "lucide-react";
 import hero from "@/assets/hero.jpg";
 import { waUrl } from "@/lib/wa";
 
@@ -9,7 +9,7 @@ export function Hero() {
     <section className="relative isolate min-h-[100svh] overflow-hidden">
       <img
         src={hero}
-        alt="Misty Indian hill station at golden hour"
+        alt="Beautiful travel destination in India"
         width={1920}
         height={1080}
         className="absolute inset-0 -z-10 h-full w-full object-cover"
@@ -25,7 +25,7 @@ export function Hero() {
           className="inline-flex w-fit items-center gap-2 rounded-full glass-dark px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.3em] text-white"
         >
           <span className="h-1.5 w-1.5 rounded-full bg-gold" />
-          Premium Travel · Trusted Since Day One
+          Reliable Travel · Trusted in Visakhapatnam
         </motion.span>
 
         <motion.h1
@@ -34,8 +34,8 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.05 }}
           className="mt-6 max-w-4xl font-display text-5xl font-bold leading-[1.05] text-white md:text-7xl lg:text-[5.5rem]"
         >
-          Explore <span className="text-gradient-gold">Beautiful</span> Destinations
-          <br className="hidden md:block" /> Across India
+          Your Journey, <span className="text-gradient-gold">Our Priority</span>
+          <br className="hidden md:block" /> SDB Travels
         </motion.h1>
 
         <motion.p
@@ -44,8 +44,8 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-6 max-w-2xl text-lg text-white/85 md:text-xl"
         >
-          Tour Packages · Pilgrimage Trips · Nature Escapes · School Transport Services.
-          Crafted journeys with comfort, care and unforgettable memories.
+          Taxi Service · Travel Planning · Family & Group Tours · Hotel Reservations.
+          Reliable, affordable and comfortable travel solutions in Visakhapatnam.
         </motion.p>
 
         <motion.div
