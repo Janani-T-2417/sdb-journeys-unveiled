@@ -43,14 +43,7 @@ export function PackageCard({ p, index = 0 }: { p: Package; index?: number }) {
           ))}
         </ul>
 
-        <div className="mt-5 flex items-end justify-between">
-          <div>
-            <p className="text-[11px] uppercase tracking-widest text-muted-foreground">Starting from</p>
-            <p className="font-display text-2xl font-bold text-secondary">{p.price}<span className="text-xs font-medium text-muted-foreground"> /person</span></p>
-          </div>
-        </div>
-
-        <div className="mt-5 flex flex-col gap-2 sm:flex-row">
+        <div className="mt-6 flex flex-col gap-2 sm:flex-row">
           <button className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-gradient-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground shadow-soft transition-transform hover:scale-[1.02]">
             View Details <ArrowRight className="h-4 w-4" />
           </button>
