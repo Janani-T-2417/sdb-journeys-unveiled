@@ -4,7 +4,7 @@ import { Hero } from "@/components/Hero";
 import { PackageCard } from "@/components/PackageCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { featured, packages } from "@/data/packages";
-import { Car, Navigation, UsersRound, Hotel, MessageCircle, Star } from "lucide-react";
+import { Car, Bus, Navigation, UsersRound, Hotel, MessageCircle, Star } from "lucide-react";
 import { waUrl } from "@/lib/wa";
 
 export const Route = createFileRoute("/")({
@@ -19,6 +19,18 @@ export const Route = createFileRoute("/")({
 
 const services = [
   { to: "/packages", title: "Taxi Service", desc: "Local & outstation cabs with experienced drivers", Icon: Car },
+{
+  to: "/school-transport",
+  title: "Bus Transport",
+  desc: "Comfortable and secure bus transport services for schools and groups",
+  Icon: Bus,
+},
+{
+   to: "/school-transport",
+   title: "Auto Transportation",
+   desc: "Safe and reliable auto transportation for students and daily commuters",
+   Icon: Car,
+},
   { to: "/packages", title: "Travel Planning", desc: "Custom itineraries for your perfect trip", Icon: Navigation },
   { to: "/packages", title: "Family & Group Tours", desc: "Comfortable trips for families and large groups", Icon: UsersRound },
   { to: "/packages", title: "Hotel Reservations", desc: "Best stays at affordable prices", Icon: Hotel },
